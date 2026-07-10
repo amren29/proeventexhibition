@@ -38,13 +38,13 @@
                 <span class="nav__logo-text">EVENT &amp; EXHIBITION</span>
             </a>
             <ul class="nav__links">
-                <li><a href="about" class="nav__link">About</a></li>
-                <li><a href="services" class="nav__link">Services</a></li>
-                <li><a href="products" class="nav__link nav__link--active">Products</a></li>
-                <li><a href="portfolio" class="nav__link">Portfolio</a></li>
-                <li><a href="faq" class="nav__link">FAQ</a></li>
-                <li><a href="contact" class="nav__link">Contact Us</a></li>
-                <li><a href="contact" class="nav__link nav__link--cta">Get a Quote</a></li>
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="services.html" class="nav__link">Services</a></li>
+                <li><a href="products.html" class="nav__link nav__link--active">Products</a></li>
+                <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                <li><a href="faq.html" class="nav__link">FAQ</a></li>
+                <li><a href="contact.html" class="nav__link">Contact Us</a></li>
+                <li><a href="contact.html" class="nav__link nav__link--cta">Get a Quote</a></li>
             </ul>
             <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -56,13 +56,13 @@
     <div class="nav__mobile" id="mobileMenu">
         <button class="nav__mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
         <ul>
-            <li><a href="about" class="nav__mobile-link">About</a></li>
-            <li><a href="services" class="nav__mobile-link">Services</a></li>
-            <li><a href="products" class="nav__mobile-link nav__mobile-link--active">Products</a></li>
-            <li><a href="portfolio" class="nav__mobile-link">Portfolio</a></li>
-            <li><a href="faq" class="nav__mobile-link">FAQ</a></li>
-            <li><a href="contact" class="nav__mobile-link">Contact Us</a></li>
-            <li><a href="contact" class="nav__mobile-link nav__mobile-link--cta">Get a Quote</a></li>
+            <li><a href="about.html" class="nav__mobile-link">About</a></li>
+            <li><a href="services.html" class="nav__mobile-link">Services</a></li>
+            <li><a href="products.html" class="nav__mobile-link nav__mobile-link--active">Products</a></li>
+            <li><a href="portfolio.html" class="nav__mobile-link">Portfolio</a></li>
+            <li><a href="faq.html" class="nav__mobile-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav__mobile-link">Contact Us</a></li>
+            <li><a href="contact.html" class="nav__mobile-link nav__mobile-link--cta">Get a Quote</a></li>
         </ul>
     </div>
 
@@ -70,7 +70,7 @@
     <section class="page-hero">
         <div class="page-hero__bg"><div class="page-hero__glow"></div></div>
         <div class="page-hero__container">
-            <a href="/" class="page-hero__back">
+            <a href="index.html" class="page-hero__back">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg>
                 Home
             </a>
@@ -84,454 +84,365 @@
     <section class="products" id="products">
         <div class="products__container">
 
-            <div class="products__filter fade-up">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="av">AV &amp; Screens</button>
-                <button class="filter-btn" data-filter="lighting">Lighting</button>
-                <button class="filter-btn" data-filter="stage">Stage &amp; Effects</button>
-                <button class="filter-btn" data-filter="exhibition">Exhibition</button>
-                <button class="filter-btn" data-filter="media">Photo &amp; Video</button>
-                <button class="filter-btn" data-filter="entertainment">Entertainment</button>
-                <button class="filter-btn" data-filter="furniture">Furniture</button>
-                <button class="filter-btn" data-filter="decor">Decoration</button>
-            </div>
+            <div class="products__layout">
 
-            <div class="products__grid">
-
-                <!-- AV & SCREENS -->
-                <div class="product-item fade-up" data-category="av">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </div>
-                        <span class="product-card__tag">AV &amp; Screens</span>
-                        <h3 class="service-card__title">LED Screen – Indoor</h3>
-                        <p class="service-card__desc">High-resolution display rental for indoor events. Available in multiple sizes from 3M&times;2M up to 8M&times;4M configurations.</p>
-                        <ul class="product-card__includes">
-                            <li>Multiple screen sizes available</li>
-                            <li>Setup &amp; teardown included</li>
-                            <li>On-site technician support</li>
+                <!-- ===== SIDEBAR ===== -->
+                <aside class="products__sidebar">
+                    <div class="products__sidebar-inner">
+                        <h3 class="products__sidebar-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="15" height="15"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                            Categories
+                        </h3>
+                        <ul class="products__cat-list">
+                            <li><button class="cat-btn active" data-filter="all">All Products</button></li>
+                            <li><button class="cat-btn" data-filter="av">AV &amp; Screens</button></li>
+                            <li><button class="cat-btn" data-filter="lighting">Lighting</button></li>
+                            <li><button class="cat-btn" data-filter="stage">Stage &amp; Effects</button></li>
+                            <li><button class="cat-btn" data-filter="exhibition">Exhibition</button></li>
+                            <li><button class="cat-btn" data-filter="media">Photo &amp; Video</button></li>
+                            <li><button class="cat-btn" data-filter="entertainment">Entertainment</button></li>
+                            <li><button class="cat-btn" data-filter="furniture">Furniture</button></li>
+                            <li><button class="cat-btn" data-filter="decor">Decoration</button></li>
                         </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="product-item fade-up" data-category="av">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 10h20M8 21h8M12 17v4"/></svg>
+                        <div class="products__sidebar-cta">
+                            <p>Can't find what you need?</p>
+                            <a href="contact.html" class="products__sidebar-cta-btn">
+                                Ask Us Directly
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
                         </div>
-                        <span class="product-card__tag">AV &amp; Screens</span>
-                        <h3 class="service-card__title">LED Screen Welcome Arch</h3>
-                        <p class="service-card__desc">Dual LED display arch structure — a dramatic entrance feature for events with custom content and branding.</p>
-                        <ul class="product-card__includes">
-                            <li>Arch structure &amp; LED panels</li>
-                            <li>Custom content display</li>
-                            <li>Installation included</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
                     </div>
-                </div>
+                </aside>
 
-                <div class="product-item fade-up" data-category="av">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg>
+                <!-- ===== MAIN GRID ===== -->
+                <div class="products__main">
+
+                    <!-- Toolbar: search + count -->
+                    <div class="products__toolbar">
+                        <div class="products__search-wrap">
+                            <svg class="products__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input class="products__search" id="productSearch" type="search" placeholder="Search products…" aria-label="Search products">
                         </div>
-                        <span class="product-card__tag">AV &amp; Screens</span>
-                        <h3 class="service-card__title">Sound System</h3>
-                        <p class="service-card__desc">Complete professional audio package delivering clear, powerful sound for events of any scale.</p>
-                        <ul class="product-card__includes">
-                            <li>4 fullrange speakers &amp; 4 subwoofers</li>
-                            <li>16-channel mixer</li>
-                            <li>6 microphones</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
+                        <p class="products__count"><span id="productCount">25</span> products</p>
                     </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="av">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    <div class="products__grid">
+
+                        <!-- AV & SCREENS -->
+                        <div class="product-item fade-up" data-category="av" data-name="led screen indoor">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--av"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">AV &amp; Screens</span>
+                                    <h3 class="product-card__title">LED Screen – Indoor</h3>
+                                    <p class="product-card__desc">High-brightness P3 indoor LED wall, any size</p>
+                                    <a href="product.html?id=led-indoor" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">AV &amp; Screens</span>
-                        <h3 class="service-card__title">Truss Structure</h3>
-                        <p class="service-card__desc">Heavy-duty aluminium rigging framework for hanging lights, screens, and signage overhead at any event.</p>
-                        <ul class="product-card__includes">
-                            <li>Aluminium truss system</li>
-                            <li>Base plates &amp; clamps</li>
-                            <li>Full installation</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- LIGHTING -->
-                <div class="product-item fade-up" data-category="lighting">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <div class="product-item fade-up" data-category="av" data-name="led screen welcome arch">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--av-arch"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">AV &amp; Screens</span>
+                                    <h3 class="product-card__title">LED Screen Welcome Arch</h3>
+                                    <p class="product-card__desc">Curved LED arch display for grand entrances</p>
+                                    <a href="product.html?id=led-arch" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Lighting</span>
-                        <h3 class="service-card__title">Full Stage Lighting Package</h3>
-                        <p class="service-card__desc">Complete professional stage lighting for large productions, concerts, and premium events.</p>
-                        <ul class="product-card__includes">
-                            <li>12 LED par lights &amp; 4 moving heads</li>
-                            <li>2 follow spots, DMX controller &amp; truss</li>
-                            <li>Haze machine &amp; 2 operators</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="lighting">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                        <div class="product-item fade-up" data-category="av" data-name="sound system pa">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--sound"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">AV &amp; Screens</span>
+                                    <h3 class="product-card__title">Sound System</h3>
+                                    <p class="product-card__desc">Line-array PA system with engineer support</p>
+                                    <a href="product.html?id=sound-system" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Lighting</span>
-                        <h3 class="service-card__title">Mood &amp; Ambience Package</h3>
-                        <p class="service-card__desc">Atmospheric lighting for gala dinners, weddings, and intimate events requiring a sophisticated atmosphere.</p>
-                        <ul class="product-card__includes">
-                            <li>8 LED par lights &amp; 2 moving heads</li>
-                            <li>DMX controller &amp; smoke machine</li>
-                            <li>1 lighting operator</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="lighting">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <div class="product-item fade-up" data-category="av" data-name="truss structure aluminium">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--truss"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">AV &amp; Screens</span>
+                                    <h3 class="product-card__title">Truss Structure</h3>
+                                    <p class="product-card__desc">Aluminium goal-post &amp; box truss, any span</p>
+                                    <a href="product.html?id=truss" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Lighting</span>
-                        <h3 class="service-card__title">Basic Lighting Package</h3>
-                        <p class="service-card__desc">Entry-level lighting for smaller venues, meetings, and corporate gatherings that need a professional finish.</p>
-                        <ul class="product-card__includes">
-                            <li>4 LED par lights</li>
-                            <li>Lighting controller &amp; stands</li>
-                            <li>Cables &amp; full setup</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- STAGE & EFFECTS -->
-                <div class="product-item fade-up" data-category="stage">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        <!-- LIGHTING -->
+                        <div class="product-item fade-up" data-category="lighting" data-name="full stage lighting package">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--lighting"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Lighting</span>
+                                    <h3 class="product-card__title">Full Stage Lighting Package</h3>
+                                    <p class="product-card__desc">Moving heads, wash lights &amp; full rig</p>
+                                    <a href="product.html?id=lighting-full" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Stage &amp; Effects</span>
-                        <h3 class="service-card__title">Backdrop (Wood with Printing)</h3>
-                        <p class="service-card__desc">Premium wooden panel backdrop with custom printed design — ideal for photo opportunities and branded stages.</p>
-                        <ul class="product-card__includes">
-                            <li>Wooden frame structure</li>
-                            <li>Custom printed panel</li>
-                            <li>Full installation</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="stage">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                        <div class="product-item fade-up" data-category="lighting" data-name="mood ambience lighting package">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--lighting-mood"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Lighting</span>
+                                    <h3 class="product-card__title">Mood &amp; Ambience Package</h3>
+                                    <p class="product-card__desc">Pin spots, fairy lights &amp; atmosphere</p>
+                                    <a href="product.html?id=lighting-mood" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Stage &amp; Effects</span>
-                        <h3 class="service-card__title">Rostrum</h3>
-                        <p class="service-card__desc">Professional podium for speakers, emcees, and presenters — adds a polished, authoritative stage presence.</p>
-                        <ul class="product-card__includes">
-                            <li>Acrylic rostrum</li>
-                            <li>Microphone holder</li>
-                            <li>Optional logo panel</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="stage">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <div class="product-item fade-up" data-category="lighting" data-name="basic lighting package par beam">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--lighting-basic"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Lighting</span>
+                                    <h3 class="product-card__title">Basic Lighting Package</h3>
+                                    <p class="product-card__desc">PAR cans &amp; beam lights starter pack</p>
+                                    <a href="product.html?id=lighting-basic" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Stage &amp; Effects</span>
-                        <h3 class="service-card__title">Cold Spark Machine</h3>
-                        <p class="service-card__desc">Indoor cold spark fountain effect — a crowd favourite for award ceremonies, gala dinners, and stage reveals.</p>
-                        <ul class="product-card__includes">
-                            <li>2 machines</li>
-                            <li>Spark powder supply</li>
-                            <li>Operator &amp; setup</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="stage">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                        <!-- STAGE & EFFECTS -->
+                        <div class="product-item fade-up" data-category="stage" data-name="backdrop wood printing media wall">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--backdrop"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Stage &amp; Effects</span>
+                                    <h3 class="product-card__title">Backdrop (Wood with Printing)</h3>
+                                    <p class="product-card__desc">Custom printed media wall backdrop</p>
+                                    <a href="product.html?id=backdrop" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Stage &amp; Effects</span>
-                        <h3 class="service-card__title">Launching Gimmick</h3>
-                        <p class="service-card__desc">Button-triggered launch effect combining confetti, lights, and sound for unforgettable product and event reveals.</p>
-                        <ul class="product-card__includes">
-                            <li>Launch button trigger system</li>
-                            <li>Confetti, lights &amp; sound effects</li>
-                            <li>1 operator</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- EXHIBITION -->
-                <div class="product-item fade-up" data-category="exhibition">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        <div class="product-item fade-up" data-category="stage" data-name="rostrum podium lectern">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--rostrum"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Stage &amp; Effects</span>
+                                    <h3 class="product-card__title">Rostrum</h3>
+                                    <p class="product-card__desc">Branded podium for speeches &amp; talks</p>
+                                    <a href="product.html?id=rostrum" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Exhibition</span>
-                        <h3 class="service-card__title">Booth 3D Design Service</h3>
-                        <p class="service-card__desc">Professional 3D rendering to visualize your booth concept before construction — ideal for client approvals.</p>
-                        <ul class="product-card__includes">
-                            <li>Detailed 3D concept design</li>
-                            <li>2 revision rounds</li>
-                            <li>High-resolution renders</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="exhibition">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                        <div class="product-item fade-up" data-category="stage" data-name="cold spark machine pyrotechnics">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--cold-spark"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Stage &amp; Effects</span>
+                                    <h3 class="product-card__title">Cold Spark Machine</h3>
+                                    <p class="product-card__desc">Safe indoor cold spark fountain effect</p>
+                                    <a href="product.html?id=cold-spark" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Exhibition</span>
-                        <h3 class="service-card__title">Custom Exhibition Booth</h3>
-                        <p class="service-card__desc">Fully custom-built booth tailored to your brand — from modular systems to bespoke double-decker structures.</p>
-                        <ul class="product-card__includes">
-                            <li>Custom structure &amp; printed graphics</li>
-                            <li>Built-in lighting</li>
-                            <li>Installation &amp; dismantling</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- PHOTO & VIDEO -->
-                <div class="product-item fade-up" data-category="media">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+                        <div class="product-item fade-up" data-category="stage" data-name="launching gimmick product reveal">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--launching"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Stage &amp; Effects</span>
+                                    <h3 class="product-card__title">Launching Gimmick</h3>
+                                    <p class="product-card__desc">Product reveal &amp; button launch mechanism</p>
+                                    <a href="product.html?id=launching" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Photo &amp; Video</span>
-                        <h3 class="service-card__title">Drone Videography</h3>
-                        <p class="service-card__desc">Aerial photography and cinematic video capturing breathtaking bird's-eye perspectives of your event or venue.</p>
-                        <ul class="product-card__includes">
-                            <li>Licensed &amp; insured pilot</li>
-                            <li>4K aerial footage</li>
-                            <li>Edited highlight clip</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="media">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        <!-- EXHIBITION -->
+                        <div class="product-item fade-up" data-category="exhibition" data-name="booth 3d design service render">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--booth-3d"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Exhibition</span>
+                                    <h3 class="product-card__title">Booth 3D Design Service</h3>
+                                    <p class="product-card__desc">Photorealistic renders before you build</p>
+                                    <a href="product.html?id=booth-3d" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Photo &amp; Video</span>
-                        <h3 class="service-card__title">Event Videography</h3>
-                        <p class="service-card__desc">Professional cinematography capturing every key moment with full post-production editing and highlight reel.</p>
-                        <ul class="product-card__includes">
-                            <li>Professional videographer</li>
-                            <li>Full event footage</li>
-                            <li>Edited highlight video</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="media">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <div class="product-item fade-up" data-category="exhibition" data-name="custom exhibition booth stand">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--booth-custom"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Exhibition</span>
+                                    <h3 class="product-card__title">Custom Exhibition Booth</h3>
+                                    <p class="product-card__desc">Modular or full-custom display stands</p>
+                                    <a href="product.html?id=booth-custom" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Photo &amp; Video</span>
-                        <h3 class="service-card__title">Event Photography</h3>
-                        <p class="service-card__desc">Professional photography capturing the best moments of your event in high resolution with polished delivery.</p>
-                        <ul class="product-card__includes">
-                            <li>Professional photographer</li>
-                            <li>Edited high-res photos</li>
-                            <li>Online gallery delivery</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- ENTERTAINMENT -->
-                <div class="product-item fade-up" data-category="entertainment">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        <!-- PHOTO & VIDEO -->
+                        <div class="product-item fade-up" data-category="media" data-name="drone videography fpv aerial">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--drone"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Photo &amp; Video</span>
+                                    <h3 class="product-card__title">Drone Videography</h3>
+                                    <p class="product-card__desc">Licensed cinematic drone filming</p>
+                                    <a href="product.html?id=drone" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Entertainment</span>
-                        <h3 class="service-card__title">Cotton Candy Machine</h3>
-                        <p class="service-card__desc">Fun crowd-pleasing cotton candy station adding a festive touch to family events, roadshows, and carnivals.</p>
-                        <ul class="product-card__includes">
-                            <li>1 cotton candy machine</li>
-                            <li>Sugar supply included</li>
-                            <li>1 operator</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="entertainment">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        <div class="product-item fade-up" data-category="media" data-name="event videography multi-cam video">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--video"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Photo &amp; Video</span>
+                                    <h3 class="product-card__title">Event Videography</h3>
+                                    <p class="product-card__desc">Multi-cam full-event video production</p>
+                                    <a href="product.html?id=videography" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Entertainment</span>
-                        <h3 class="service-card__title">Popcorn Machine</h3>
-                        <p class="service-card__desc">Classic popcorn machine serving freshly popped snacks — a crowd favourite at any event or roadshow.</p>
-                        <ul class="product-card__includes">
-                            <li>1 popcorn machine</li>
-                            <li>Popcorn supply included</li>
-                            <li>1 operator</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- FURNITURE -->
-                <div class="product-item fade-up" data-category="furniture">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <div class="product-item fade-up" data-category="media" data-name="event photography professional">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--photo"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Photo &amp; Video</span>
+                                    <h3 class="product-card__title">Event Photography</h3>
+                                    <p class="product-card__desc">Professional event &amp; lifestyle photography</p>
+                                    <a href="product.html?id=photography" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Furniture</span>
-                        <h3 class="service-card__title">Cocktail Table (High Table)</h3>
-                        <p class="service-card__desc">Standing cocktail tables ideal for networking sessions, registration areas, and VIP receptions.</p>
-                        <ul class="product-card__includes">
-                            <li>High table unit(s)</li>
-                            <li>Optional table cover</li>
-                            <li>Delivery &amp; collection</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="furniture">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                        <!-- ENTERTAINMENT -->
+                        <div class="product-item fade-up" data-category="entertainment" data-name="cotton candy machine floss">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--cotton-candy"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Entertainment</span>
+                                    <h3 class="product-card__title">Cotton Candy Machine</h3>
+                                    <p class="product-card__desc">Sweet-spun carnival treat dispenser</p>
+                                    <a href="product.html?id=cotton-candy" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Furniture</span>
-                        <h3 class="service-card__title">Tiffany Chair</h3>
-                        <p class="service-card__desc">Elegant clear acrylic chairs adding modern sophistication to weddings, gala dinners, and upscale events.</p>
-                        <ul class="product-card__includes">
-                            <li>Chair unit(s)</li>
-                            <li>Available in various quantities</li>
-                            <li>Delivery &amp; collection</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="furniture">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                        <div class="product-item fade-up" data-category="entertainment" data-name="popcorn machine cart">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--popcorn"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Entertainment</span>
+                                    <h3 class="product-card__title">Popcorn Machine</h3>
+                                    <p class="product-card__desc">Commercial popcorn cart for any event</p>
+                                    <a href="product.html?id=popcorn" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Furniture</span>
-                        <h3 class="service-card__title">Lounge Sofa Set</h3>
-                        <p class="service-card__desc">Comfortable lounge seating creating VIP areas, chill-out zones, and premium photo spots at events.</p>
-                        <ul class="product-card__includes">
-                            <li>2-seater sofa (×2)</li>
-                            <li>Coffee table &amp; side table</li>
-                            <li>Delivery &amp; collection</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="furniture">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <!-- FURNITURE -->
+                        <div class="product-item fade-up" data-category="furniture" data-name="cocktail table high table bar">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--cocktail-table"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Furniture</span>
+                                    <h3 class="product-card__title">Cocktail Table (High Table)</h3>
+                                    <p class="product-card__desc">Elegant bar-height event tables</p>
+                                    <a href="product.html?id=cocktail-table" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Furniture</span>
-                        <h3 class="service-card__title">Steel Barricade</h3>
-                        <p class="service-card__desc">Crowd control steel barriers for managing pedestrian flow and securing perimeters at large gatherings.</p>
-                        <ul class="product-card__includes">
-                            <li>Interlocking steel panels</li>
-                            <li>Available in various quantities</li>
-                            <li>Delivery &amp; collection</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- DECORATION -->
-                <div class="product-item fade-up" data-category="decor">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <div class="product-item fade-up" data-category="furniture" data-name="tiffany chair banquet clear">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--tiffany"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Furniture</span>
+                                    <h3 class="product-card__title">Tiffany Chair</h3>
+                                    <p class="product-card__desc">Clear or coloured banquet chairs</p>
+                                    <a href="product.html?id=tiffany-chair" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Decoration</span>
-                        <h3 class="service-card__title">Custom Welcome Arch (Wood)</h3>
-                        <p class="service-card__desc">Elegant natural wood entrance arch — a stunning focal point customizable with flowers, fabric, and greenery.</p>
-                        <ul class="product-card__includes">
-                            <li>Wooden arch structure</li>
-                            <li>Customizable with décor</li>
-                            <li>Installation included</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="decor">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M12 2v4M12 10v12M8 14l4 4 4-4"/></svg>
+                        <div class="product-item fade-up" data-category="furniture" data-name="lounge sofa set premium">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--sofa"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Furniture</span>
+                                    <h3 class="product-card__title">Lounge Sofa Set</h3>
+                                    <p class="product-card__desc">Premium L-shape &amp; 2-seater lounge sets</p>
+                                    <a href="product.html?id=lounge-sofa" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Decoration</span>
-                        <h3 class="service-card__title">Balloon Decoration</h3>
-                        <p class="service-card__desc">Custom balloon arrangements including arches, columns, and bouquets — adding colour and vibrancy to any event.</p>
-                        <ul class="product-card__includes">
-                            <li>Balloon arch or column</li>
-                            <li>Custom colours available</li>
-                            <li>Setup &amp; teardown</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-                <div class="product-item fade-up" data-category="decor">
-                    <div class="service-card product-card">
-                        <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                        <div class="product-item fade-up" data-category="furniture" data-name="steel barricade crowd control fence">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--barricade"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Furniture</span>
+                                    <h3 class="product-card__title">Steel Barricade</h3>
+                                    <p class="product-card__desc">Crowd-control fencing for any event</p>
+                                    <a href="product.html?id=barricade" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
                         </div>
-                        <span class="product-card__tag">Decoration</span>
-                        <h3 class="service-card__title">Neon Sign</h3>
-                        <p class="service-card__desc">Custom LED neon signs for photo backdrops, branding, and ambience — any text or logo design available.</p>
-                        <ul class="product-card__includes">
-                            <li>Custom text or logo design</li>
-                            <li>Power adapter included</li>
-                            <li>Setup &amp; collection</li>
-                        </ul>
-                        <a href="contact" class="service-card__link">Get a Quote &rarr;</a>
-                    </div>
-                </div>
 
-            </div>
+                        <!-- DECORATION -->
+                        <div class="product-item fade-up" data-category="decor" data-name="custom welcome arch wood flower">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--arch"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Decoration</span>
+                                    <h3 class="product-card__title">Custom Welcome Arch (Wood)</h3>
+                                    <p class="product-card__desc">Branded flower or panel welcome arch</p>
+                                    <a href="product.html?id=welcome-arch" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-item fade-up" data-category="decor" data-name="balloon decoration column cluster">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--balloon"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Decoration</span>
+                                    <h3 class="product-card__title">Balloon Decoration</h3>
+                                    <p class="product-card__desc">Columns, arches &amp; custom clusters</p>
+                                    <a href="product.html?id=balloon" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-item fade-up" data-category="decor" data-name="neon sign led light letter">
+                            <div class="product-card">
+                                <div class="product-card__image product-card__image--neon"></div>
+                                <div class="product-card__body">
+                                    <span class="product-card__cat">Decoration</span>
+                                    <h3 class="product-card__title">Neon Sign</h3>
+                                    <p class="product-card__desc">Custom LED neon signs &amp; light-up letters</p>
+                                    <a href="product.html?id=neon-sign" class="product-card__btn">Ask for Quote</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /.products__grid -->
+
+                    <p class="products__no-results" id="noResults" style="display:none">No products match your search.</p>
+
+                </div><!-- /.products__main -->
+
+            </div><!-- /.products__layout -->
         </div>
     </section>
 
@@ -547,7 +458,7 @@
                     <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     WhatsApp Us
                 </a>
-                <a href="contact" class="btn btn--secondary">Get a Quote</a>
+                <a href="contact.html" class="btn btn--secondary">Get a Quote</a>
             </div>
             <div class="cta__info">
                 <span>
@@ -583,24 +494,24 @@
                 <div class="footer__col">
                     <h4 class="footer__col-title">Services</h4>
                     <ul class="footer__links">
-                        <li><a href="services">Exhibition Booth Design</a></li>
-                        <li><a href="services">Trade Shows</a></li>
-                        <li><a href="services">Corporate Events</a></li>
-                        <li><a href="services">Conference Management</a></li>
-                        <li><a href="services">Stage Production</a></li>
-                        <li><a href="services">Product Launch</a></li>
-                        <li><a href="services">Brand Activation</a></li>
-                        <li><a href="services">Equipment Rental</a></li>
+                        <li><a href="services.html">Exhibition Booth Design</a></li>
+                        <li><a href="services.html">Trade Shows</a></li>
+                        <li><a href="services.html">Corporate Events</a></li>
+                        <li><a href="services.html">Conference Management</a></li>
+                        <li><a href="services.html">Stage Production</a></li>
+                        <li><a href="services.html">Product Launch</a></li>
+                        <li><a href="services.html">Brand Activation</a></li>
+                        <li><a href="services.html">Equipment Rental</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__col-title">Company</h4>
                     <ul class="footer__links">
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="portfolio">Portfolio</a></li>
-                        <li><a href="products">Products</a></li>
-                        <li><a href="faq">FAQ</a></li>
-                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
@@ -629,18 +540,41 @@
     </button>
 
     <script>
-        // Products filter
-        const prodBtns = document.querySelectorAll('.products__filter .filter-btn');
+        // Category filter
+        const catBtns = document.querySelectorAll('.cat-btn');
         const prodItems = document.querySelectorAll('.product-item');
-        prodBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                prodBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                prodItems.forEach(item => {
-                    item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
-                });
+        const countEl = document.getElementById('productCount');
+        const noResults = document.getElementById('noResults');
+        const searchInput = document.getElementById('productSearch');
+
+        let activeFilter = 'all';
+        let searchQuery = '';
+
+        function applyFilters() {
+            let visible = 0;
+            prodItems.forEach(item => {
+                const catMatch = activeFilter === 'all' || item.dataset.category === activeFilter;
+                const nameMatch = !searchQuery || item.dataset.name.includes(searchQuery);
+                const show = catMatch && nameMatch;
+                item.style.display = show ? '' : 'none';
+                if (show) visible++;
             });
+            countEl.textContent = visible;
+            noResults.style.display = visible === 0 ? '' : 'none';
+        }
+
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeFilter = btn.dataset.filter;
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', () => {
+            searchQuery = searchInput.value.trim().toLowerCase();
+            applyFilters();
         });
     </script>
     <script src="js/main.js"></script>

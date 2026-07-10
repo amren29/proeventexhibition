@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title id="page-title">Product | Pro Event &amp; Exhibition</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ---- Product Detail Page ---- */
+        .pd { padding: 160px 0 80px; background: #fff; }
+        .pd__container { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+        .pd__layout {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 56px;
+            align-items: start;
+        }
+
+        /* Left: image panel */
+        .pd__visual {
+            position: sticky;
+            top: 90px;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .pd__image {
+            height: 360px;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--surface-2);
+            position: relative;
+        }
+        .pd__image-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.9);
+            background: rgba(0,0,0,.3);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 100px;
+            padding: 5px 14px;
+            backdrop-filter: blur(8px);
+        }
+        .pd__enquiry-box {
+            background: var(--surface);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .pd__enquiry-box p {
+            font-size: 13px;
+            color: var(--grey);
+            margin: 0;
+            line-height: 1.5;
+        }
+        .pd__enquiry-btns { display: flex; flex-direction: column; gap: 10px; }
+        .pd__btn-quote {
+            display: block;
+            text-align: center;
+            background: none;
+            color: var(--red);
+            border: 2px solid var(--red);
+            border-radius: 10px;
+            padding: 13px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+        .pd__btn-quote:hover { background: var(--red); color: #fff; }
+        .pd__btn-wa {
+            display: block;
+            text-align: center;
+            background: none;
+            color: #111;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 13px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+        .pd__btn-wa:hover { background: #111; color: #fff; border-color: #111; }
+
+        /* Right: content */
+        .pd__content { padding-top: 4px; }
+        .pd__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--grey);
+            text-decoration: none;
+            margin-bottom: 24px;
+            transition: color .15s;
+        }
+        .pd__back:hover { color: var(--red); }
+        .pd__category {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--red);
+            background: rgba(193,42,42,.07);
+            border: 1px solid rgba(193,42,42,.18);
+            border-radius: 100px;
+            padding: 4px 14px;
+            margin-bottom: 14px;
+        }
+        .pd__title {
+            font-size: clamp(26px, 3vw, 40px);
+            font-weight: 900;
+            color: #111;
+            margin: 0 0 16px;
+            line-height: 1.2;
+        }
+        .pd__tagline {
+            font-size: 16px;
+            color: var(--grey);
+            line-height: 1.6;
+            margin: 0 0 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Sections */
+        .pd__section { margin-bottom: 32px; }
+        .pd__section-title {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #111;
+            margin: 0 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pd__section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .pd__desc { font-size: 15px; color: #444; line-height: 1.75; margin: 0; }
+
+        /* Includes checklist */
+        .pd__includes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .pd__includes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .pd__includes li .check {
+            width: 20px;
+            height: 20px;
+            background: rgba(193,42,42,.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            color: var(--red);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Specs table */
+        .pd__specs {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .pd__specs tr { border-bottom: 1px solid var(--border); }
+        .pd__specs tr:last-child { border-bottom: none; }
+        .pd__specs td { padding: 10px 0; vertical-align: top; }
+        .pd__specs td:first-child {
+            font-weight: 700;
+            color: #111;
+            width: 40%;
+            padding-right: 16px;
+        }
+        .pd__specs td:last-child { color: var(--grey); }
+
+        /* Related products */
+        .pd__related { padding: 60px 0; background: var(--surface); border-top: 1px solid var(--border); }
+        .pd__related-container { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+        .pd__related-header { margin-bottom: 28px; }
+        .pd__related-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+        }
+
+        /* Not found */
+        .pd__notfound {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .pd__notfound h2 { font-size: 24px; color: #111; margin: 0 0 12px; }
+        .pd__notfound p { color: var(--grey); margin: 0 0 24px; }
+
+        @media (max-width: 1024px) {
+            .pd__layout { grid-template-columns: 1fr; gap: 32px; }
+            .pd__visual { position: static; }
+            .pd__image { height: 260px; }
+            .pd__related-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .pd__related-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <span class="nav__logo-pro">PRO</span>
+                <span class="nav__logo-divider"></span>
+                <span class="nav__logo-text">EVENT &amp; EXHIBITION</span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="services.html" class="nav__link">Services</a></li>
+                <li><a href="products.html" class="nav__link nav__link--active">Products</a></li>
+                <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                <li><a href="faq.html" class="nav__link">FAQ</a></li>
+                <li><a href="contact.html" class="nav__link">Contact Us</a></li>
+                <li><a href="contact.html" class="nav__link nav__link--cta">Get a Quote</a></li>
+            </ul>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="mobileMenu">
+        <button class="nav__mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
+        <ul>
+            <li><a href="about.html" class="nav__mobile-link">About</a></li>
+            <li><a href="services.html" class="nav__mobile-link">Services</a></li>
+            <li><a href="products.html" class="nav__mobile-link nav__mobile-link--active">Products</a></li>
+            <li><a href="portfolio.html" class="nav__mobile-link">Portfolio</a></li>
+            <li><a href="faq.html" class="nav__mobile-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav__mobile-link">Contact Us</a></li>
+            <li><a href="contact.html" class="nav__mobile-link nav__mobile-link--cta">Get a Quote</a></li>
+        </ul>
+    </div>
+
+    <!-- ===== PRODUCT DETAIL ===== -->
+    <section class="pd" id="pd">
+        <div class="pd__container">
+            <div class="pd__layout" id="pdLayout">
+                <!-- Populated by JS -->
+                <div class="pd__notfound" id="pdNotFound" style="display:none; grid-column:1/-1;">
+                    <h2>Product Not Found</h2>
+                    <p>The product you're looking for doesn't exist.</p>
+                    <a href="products.html" class="btn btn--primary">Browse All Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RELATED PRODUCTS ===== -->
+    <section class="pd__related" id="pdRelated" style="display:none;">
+        <div class="pd__related-container">
+            <div class="pd__related-header">
+                <span class="section-eyebrow">More Products</span>
+                <h2 class="section-title" style="font-size:clamp(22px,2.5vw,32px); margin-bottom:0;">You May Also Need</h2>
+            </div>
+            <div class="pd__related-grid" id="pdRelatedGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="/" class="nav__logo footer__logo">
+                        <span class="nav__logo-pro">PRO</span>
+                        <span class="nav__logo-divider"></span>
+                        <span class="nav__logo-text">EVENT &amp; EXHIBITION</span>
+                    </a>
+                    <p class="footer__tagline">Creating Extraordinary Experiences</p>
+                    <p class="footer__desc">East Malaysia's premium event and exhibition agency — delivering creative solutions from Kota Kinabalu to the rest of East Malaysia.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="services.html">Exhibition Booth Design</a></li>
+                        <li><a href="services.html">Corporate Events</a></li>
+                        <li><a href="services.html">Stage Production</a></li>
+                        <li><a href="services.html">Equipment Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Contact</h4>
+                    <ul class="footer__contact-list">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Kota Kinabalu, Sabah</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 .99h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15.99v.93z"/></svg><a href="tel:+60189023676">+6018 902 3676</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:event@proeventexhibition.my">event@proeventexhibition.my</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Pro Event &amp; Exhibition. All rights reserved.</p>
+                <p>Kota Kinabalu, Sabah, Malaysia</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <script>
+    // ============================================================
+    // PRODUCT DATA
+    // ============================================================
+    const PRODUCTS = [
+        {
+            id: 'led-indoor',
+            name: 'LED Screen – Indoor',
+            category: 'av',
+            categoryLabel: 'AV & Screens',
+            imageClass: 'product-card__image--av',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+            tagline: 'High-resolution indoor LED display rental for corporate events, conferences, and product launches.',
+            desc: 'Our indoor LED screens deliver crisp, vibrant visuals that command attention in any venue. Available in a wide range of sizes — from compact 3M×2M displays to large 8M×4M configurations — they are perfect for stage backdrops, presentations, branding walls, and live feeds. Each screen includes full technical setup, colour calibration, and a dedicated on-site technician for the duration of your event.',
+            includes: [
+                'Multiple screen size configurations (3M×2M up to 8M×4M)',
+                'Full setup and calibration on-site',
+                'Dedicated technician for event duration',
+                'Content display support (HDMI, laptop, media player)',
+                'Teardown and removal after event'
+            ],
+            specs: [
+                { label: 'Pixel Pitch', value: 'P2.6 – P3.9 (indoor)' },
+                { label: 'Brightness', value: '800 – 1200 nits' },
+                { label: 'Available Sizes', value: '3×2M, 4×3M, 6×3M, 8×4M' },
+                { label: 'Content Input', value: 'HDMI, DVI, USB, LAN' },
+                { label: 'Suitable For', value: 'Indoor events only' },
+            ]
+        },
+        {
+            id: 'led-arch',
+            name: 'LED Screen Welcome Arch',
+            category: 'av',
+            categoryLabel: 'AV & Screens',
+            imageClass: 'product-card__image--av',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 10h20M8 21h8M12 17v4"/></svg>',
+            tagline: 'A dramatic dual-LED arch structure that creates a stunning branded entrance for your event.',
+            desc: 'The LED Screen Welcome Arch is one of our most impactful entrance features. Two large LED panels form an arch structure at your event entry, displaying custom content such as sponsor logos, event branding, animations, or welcome messages. It creates an instant wow factor and serves as a natural photo spot for guests. Ideal for gala dinners, award ceremonies, product launches, and roadshows.',
+            includes: [
+                'Dual LED panel arch structure',
+                'Custom content and branding display',
+                'Full installation and dismantling',
+                'On-site technician support',
+                'Content loop management'
+            ],
+            specs: [
+                { label: 'Structure', value: 'Steel + LED panels' },
+                { label: 'LED Display', value: 'Indoor P3 / P4' },
+                { label: 'Content', value: 'Video, image, live feed' },
+                { label: 'Suitable For', value: 'Indoor events' },
+            ]
+        },
+        {
+            id: 'sound-system',
+            name: 'Sound System',
+            category: 'av',
+            categoryLabel: 'AV & Screens',
+            imageClass: 'product-card__image--av',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg>',
+            tagline: 'Complete professional audio package delivering crystal-clear, powerful sound for events of any scale.',
+            desc: 'Our professional sound system packages are engineered to fill any venue with rich, clear audio. From intimate corporate meetings to large-scale outdoor events, we configure the right combination of speakers, subwoofers, mixers, and microphones for your space and audience size. All packages include a professional audio technician who handles setup, soundcheck, live mixing, and teardown.',
+            includes: [
+                '4 fullrange line array speakers',
+                '4 subwoofer bass units',
+                '16-channel professional mixing board',
+                '6 microphones (wired + wireless)',
+                'Stage monitors and floor wedges',
+                'Professional audio engineer for event duration'
+            ],
+            specs: [
+                { label: 'Speaker Type', value: 'Line Array / Fullrange' },
+                { label: 'Subwoofers', value: '4 units' },
+                { label: 'Mixer', value: '16-channel digital' },
+                { label: 'Microphones', value: '6 units (mix of wired/wireless)' },
+                { label: 'Suitable For', value: 'Indoor & outdoor events' },
+            ]
+        },
+        {
+            id: 'truss',
+            name: 'Truss Structure',
+            category: 'av',
+            categoryLabel: 'AV & Screens',
+            imageClass: 'product-card__image--av',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>',
+            tagline: 'Heavy-duty aluminium rigging framework for hanging lights, screens, and signage at any event.',
+            desc: 'Our aluminium truss systems provide a professional overhead rigging solution for hanging lighting rigs, LED screens, PA speakers, and branding banners. Available in custom configurations to suit your venue layout, the truss structure is engineered for safety and stability. All installations are performed by our experienced rigging team.',
+            includes: [
+                'Aluminium box or triangle truss sections',
+                'Base plates and ground supports',
+                'Rigging clamps and mounting hardware',
+                'Professional rigging team for installation',
+                'Load-rated safety checks before use'
+            ],
+            specs: [
+                { label: 'Material', value: 'Aluminium alloy' },
+                { label: 'Sizes', value: 'Custom to venue' },
+                { label: 'Load Capacity', value: 'Up to 500kg (per config)' },
+                { label: 'Suitable For', value: 'Indoor & tented outdoor' },
+            ]
+        },
+        {
+            id: 'lighting-full',
+            name: 'Full Stage Lighting Package',
+            category: 'lighting',
+            categoryLabel: 'Lighting',
+            imageClass: 'product-card__image--lighting',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
+            tagline: 'Complete professional stage lighting for large productions, concerts, and premium events.',
+            desc: 'Our Full Stage Lighting Package is designed for large-scale productions where maximum visual impact is required. Combining powerful LED par lights, automated moving heads, follow spots, and a haze machine, this package transforms any stage into a professional performance arena. Operated by our experienced lighting team throughout your event.',
+            includes: [
+                '12 LED par wash lights (RGBW)',
+                '4 automated moving head spot/wash units',
+                '2 follow spot lights with operators',
+                'DMX controller and programming',
+                'Truss rig for overhead mounting',
+                'Haze machine for beam definition',
+                '2 lighting operators for event duration'
+            ],
+            specs: [
+                { label: 'Par Lights', value: '12 × LED RGBW' },
+                { label: 'Moving Heads', value: '4 units (spot + wash)' },
+                { label: 'Control', value: 'DMX512 console' },
+                { label: 'Effects', value: 'Haze + follow spots' },
+                { label: 'Suitable For', value: 'Large stages, concerts, galas' },
+            ]
+        },
+        {
+            id: 'lighting-mood',
+            name: 'Mood & Ambience Package',
+            category: 'lighting',
+            categoryLabel: 'Lighting',
+            imageClass: 'product-card__image--lighting',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>',
+            tagline: 'Atmospheric lighting for gala dinners, weddings, and intimate events requiring a sophisticated atmosphere.',
+            desc: 'The Mood & Ambience Package creates stunning atmospheric lighting for events where elegance and atmosphere matter. Ideal for gala dinners, award nights, weddings, and cocktail events, this package uses a carefully curated combination of coloured wash lights, gentle moving heads, and atmospheric haze to create depth, warmth, and drama in any venue.',
+            includes: [
+                '8 LED par wash lights (full colour)',
+                '2 automated moving head lights',
+                'DMX controller with pre-programmed scenes',
+                'Smoke or haze machine',
+                '1 lighting operator for event duration'
+            ],
+            specs: [
+                { label: 'Par Lights', value: '8 × LED RGBW' },
+                { label: 'Moving Heads', value: '2 units' },
+                { label: 'Effects', value: 'Smoke / haze machine' },
+                { label: 'Suitable For', value: 'Dinners, weddings, award nights' },
+            ]
+        },
+        {
+            id: 'lighting-basic',
+            name: 'Basic Lighting Package',
+            category: 'lighting',
+            categoryLabel: 'Lighting',
+            imageClass: 'product-card__image--lighting',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+            tagline: 'Entry-level professional lighting for smaller venues, corporate meetings, and press conferences.',
+            desc: 'Our Basic Lighting Package provides a clean, professional finish for smaller events, meetings, seminars, and press conferences. Four LED par lights positioned strategically around a stage or podium provide balanced illumination without harsh shadows, ensuring speakers and presenters look their best on camera and in person.',
+            includes: [
+                '4 LED par wash lights',
+                'Lighting controller and stands',
+                'Full cabling and power distribution',
+                'Setup and teardown by our team'
+            ],
+            specs: [
+                { label: 'Par Lights', value: '4 × LED RGBW' },
+                { label: 'Control', value: 'DMX or manual' },
+                { label: 'Suitable For', value: 'Small stages, seminars, meetings' },
+            ]
+        },
+        {
+            id: 'backdrop',
+            name: 'Backdrop (Wood with Printing)',
+            category: 'stage',
+            categoryLabel: 'Stage & Effects',
+            imageClass: 'product-card__image--stage',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+            tagline: 'Premium wooden panel backdrop with full custom printing — the perfect branded backdrop for any stage or photo wall.',
+            desc: 'Our wooden panel backdrops combine a sturdy, premium frame with high-resolution custom-printed graphics to create a polished, professional backdrop for any event. Perfect for press conferences, award ceremonies, product launches, and branded photo opportunities. All designs are produced in-house and the full structure is installed by our team.',
+            includes: [
+                'Custom wooden frame structure',
+                'Full-panel custom printed graphic (your design)',
+                'Professional installation and positioning',
+                'Dismantling and removal after event',
+                'Standard sizes: 3M×2.4M, 4M×2.4M, 6M×2.4M'
+            ],
+            specs: [
+                { label: 'Frame', value: 'Engineered timber frame' },
+                { label: 'Print', value: 'Full-colour digital print' },
+                { label: 'Sizes', value: '3M to 6M wide' },
+                { label: 'Finish', value: 'Matte or gloss laminate' },
+            ]
+        },
+        {
+            id: 'rostrum',
+            name: 'Rostrum',
+            category: 'stage',
+            categoryLabel: 'Stage & Effects',
+            imageClass: 'product-card__image--stage',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+            tagline: 'Professional clear acrylic rostrum for speakers and presenters — adds a polished, authoritative stage presence.',
+            desc: 'Our acrylic rostrum (podium) gives speakers and emcees a professional, commanding presence on stage. The clear acrylic design is modern and elegant, suitable for corporate events, award ceremonies, and press conferences. Available with optional custom logo panel for branding. Includes a microphone mounting plate and cable management.',
+            includes: [
+                'Clear acrylic rostrum / podium',
+                'Built-in microphone mounting plate',
+                'Cable management compartment',
+                'Optional branded logo panel (add-on)',
+                'Delivery and setup included'
+            ],
+            specs: [
+                { label: 'Material', value: 'Premium clear acrylic' },
+                { label: 'Dimensions', value: 'Standard: 60cm × 40cm top' },
+                { label: 'Height', value: 'Approx. 110cm' },
+                { label: 'Branding', value: 'Optional logo panel available' },
+            ]
+        },
+        {
+            id: 'cold-spark',
+            name: 'Cold Spark Machine',
+            category: 'stage',
+            categoryLabel: 'Stage & Effects',
+            imageClass: 'product-card__image--stage',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+            tagline: 'Indoor cold spark fountain effect — the ultimate wow moment for award ceremonies and stage reveals.',
+            desc: 'Cold spark machines produce a spectacular fountain of brilliant sparks that are safe for indoor use — they emit no heat, no smoke, and leave no residue. Perfect for dramatic moments such as award announcements, product reveals, gala entrances, and concert highlights. Each machine can be triggered remotely and synchronised with music or lighting cues.',
+            includes: [
+                '2 cold spark machines',
+                'Titanium spark powder supply',
+                'Remote wireless trigger system',
+                '1 qualified operator for event duration',
+                'Full safety briefing and risk assessment'
+            ],
+            specs: [
+                { label: 'Spark Height', value: 'Up to 3–4 metres' },
+                { label: 'Type', value: 'Cold spark (no heat, no smoke)' },
+                { label: 'Trigger', value: 'Remote wireless control' },
+                { label: 'Suitable For', value: 'Indoor & covered outdoor' },
+                { label: 'Duration', value: '15–30 seconds per activation' },
+            ]
+        },
+        {
+            id: 'launching',
+            name: 'Launching Gimmick',
+            category: 'stage',
+            categoryLabel: 'Stage & Effects',
+            imageClass: 'product-card__image--stage',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>',
+            tagline: 'Button-triggered launch system with confetti, lights, and sound — the perfect product or event reveal moment.',
+            desc: 'Our Launching Gimmick creates a memorable, synchronised reveal moment for product launches, award ceremonies, and event openings. VIPs or guests press a branded launch button, triggering a coordinated explosion of confetti cannons, dramatic lighting changes, and a custom sound effect or music sting — all perfectly timed to create maximum impact.',
+            includes: [
+                'Custom branded launch button(s)',
+                'Wireless trigger system',
+                'Confetti cannons (multiple positions)',
+                'Coordinated lighting effects',
+                'Custom sound sting or music cue',
+                '1 operator for event duration'
+            ],
+            specs: [
+                { label: 'Trigger', value: 'Wireless button (1–4 units)' },
+                { label: 'Effects', value: 'Confetti, lighting, audio' },
+                { label: 'Setup Time', value: '2–3 hours prior to event' },
+                { label: 'Suitable For', value: 'Product launches, award nights' },
+            ]
+        },
+        {
+            id: 'booth-3d',
+            name: 'Booth 3D Design Service',
+            category: 'exhibition',
+            categoryLabel: 'Exhibition',
+            imageClass: 'product-card__image--exhibition',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+            tagline: 'Professional 3D rendering to visualise your booth concept before construction begins.',
+            desc: 'Before a single panel is cut or printed, our design team creates a detailed 3D render of your exhibition booth so you can visualise exactly how it will look on the show floor. This service is invaluable for internal approvals, client presentations, and ensuring the final build matches expectations. Two rounds of revisions are included to refine the design until it is exactly right.',
+            includes: [
+                'Initial brief and concept consultation',
+                'Detailed 3D concept render (multiple angles)',
+                '2 rounds of design revisions',
+                'High-resolution final render files',
+                'Floor plan layout drawing'
+            ],
+            specs: [
+                { label: 'Deliverables', value: '3D renders + floor plan' },
+                { label: 'File Formats', value: 'JPG, PDF, PNG' },
+                { label: 'Revisions', value: '2 rounds included' },
+                { label: 'Turnaround', value: '5–7 working days' },
+            ]
+        },
+        {
+            id: 'booth-custom',
+            name: 'Custom Exhibition Booth',
+            category: 'exhibition',
+            categoryLabel: 'Exhibition',
+            imageClass: 'product-card__image--exhibition',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+            tagline: 'Fully custom-built exhibition booth tailored to your brand — from modular systems to bespoke double-decker structures.',
+            desc: 'Our custom exhibition booths are designed and built entirely from scratch to your brand specifications. Whether you need a sleek 3×3 modular booth or an elaborate 10×10 double-decker island with integrated AV, meeting rooms, and custom joinery, our fabrication team delivers it on time and on budget. Every booth includes full installation at the venue and dismantling after the show.',
+            includes: [
+                'Custom 3D design and planning',
+                'Full fabrication (walls, counters, storage)',
+                'Branded graphics and printing',
+                'Built-in LED or spotlighting',
+                'On-site installation at venue',
+                'Dismantling and removal post-show'
+            ],
+            specs: [
+                { label: 'Minimum Size', value: '3m × 3m' },
+                { label: 'Structure', value: 'Modular or bespoke timber' },
+                { label: 'Graphics', value: 'Full-colour digital print' },
+                { label: 'Lighting', value: 'Included' },
+                { label: 'Double-decker', value: 'Available on request' },
+            ]
+        },
+        {
+            id: 'drone',
+            name: 'Drone Videography',
+            category: 'media',
+            categoryLabel: 'Photo & Video',
+            imageClass: 'product-card__image--media',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>',
+            tagline: 'Aerial photography and cinematic drone footage capturing your event or venue from breathtaking perspectives.',
+            desc: 'Our licensed drone operators capture stunning aerial footage that elevates your event coverage to a cinematic level. From dramatic wide-angle reveals of your venue to smooth tracking shots of outdoor events and processions, aerial videography adds a production quality that ground-based cameras simply cannot match. All footage is shot in 4K and delivered as an edited highlight package.',
+            includes: [
+                'Licensed and insured UAV pilot',
+                '4K aerial video footage',
+                'High-resolution aerial photography',
+                'Edited aerial highlight clip',
+                'Raw footage files on delivery'
+            ],
+            specs: [
+                { label: 'Resolution', value: '4K UHD video' },
+                { label: 'Photo', value: 'High-resolution RAW + JPG' },
+                { label: 'Pilot', value: 'Licensed, CAAM compliant' },
+                { label: 'Deliverables', value: 'Edited clip + raw files' },
+                { label: 'Turnaround', value: '3–5 working days' },
+            ]
+        },
+        {
+            id: 'videography',
+            name: 'Event Videography',
+            category: 'media',
+            categoryLabel: 'Photo & Video',
+            imageClass: 'product-card__image--media',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',
+            tagline: 'Professional cinematography capturing every key moment of your event with full post-production editing.',
+            desc: 'Our event videographers are experienced professionals who understand how to capture the energy, emotion, and key moments of live events. From arrival and setup through to speeches, performances, and networking, nothing important is missed. Post-production includes colour grading, music, titles, and a polished highlight reel plus full-length coverage.',
+            includes: [
+                'Professional videographer(s) for full event duration',
+                'Multiple camera angles where applicable',
+                'Lapel and boom audio capture for speeches',
+                'Full event footage (unedited)',
+                'Edited highlight video (3–5 minutes)',
+                'Digital delivery via cloud link'
+            ],
+            specs: [
+                { label: 'Resolution', value: '4K / 1080p' },
+                { label: 'Cameras', value: '1–3 cameras (based on package)' },
+                { label: 'Audio', value: 'Lapel mic + boom' },
+                { label: 'Highlight', value: '3–5 minute edit' },
+                { label: 'Turnaround', value: '7–14 working days' },
+            ]
+        },
+        {
+            id: 'photography',
+            name: 'Event Photography',
+            category: 'media',
+            categoryLabel: 'Photo & Video',
+            imageClass: 'product-card__image--media',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>',
+            tagline: 'Professional photography capturing every key moment of your event in stunning high resolution.',
+            desc: 'Our event photographers capture your event with a journalistic eye — candid moments, staged group shots, stage coverage, and detail photography all delivered in a polished, professionally edited gallery. Every photo is colour-corrected and retouched before delivery. Perfect for corporate events, product launches, conferences, gala dinners, and exhibitions.',
+            includes: [
+                'Professional photographer for full event duration',
+                'Candid and directed coverage',
+                'Group photography sessions',
+                'Stage and speaker coverage',
+                'Professionally edited high-resolution images',
+                'Online gallery delivery'
+            ],
+            specs: [
+                { label: 'Resolution', value: 'Full-frame RAW + JPG' },
+                { label: 'Editing', value: 'Colour corrected + retouched' },
+                { label: 'Delivery', value: 'Private online gallery' },
+                { label: 'Turnaround', value: '5–7 working days' },
+            ]
+        },
+        {
+            id: 'cotton-candy',
+            name: 'Cotton Candy Machine',
+            category: 'entertainment',
+            categoryLabel: 'Entertainment',
+            imageClass: 'product-card__image--entertainment',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>',
+            tagline: 'A fun, crowd-pleasing cotton candy station that adds a festive touch to any event.',
+            desc: 'Our cotton candy station brings a playful, festive energy to family events, roadshows, carnivals, brand activations, and school events. A uniformed operator spins fresh cotton candy in your choice of colours throughout the event. The station can be branded with your company logo or event name for a cohesive look.',
+            includes: [
+                '1 professional cotton candy machine',
+                'Sugar and flavouring supply for event duration',
+                '1 uniformed operator',
+                'Serving cones and packaging',
+                'Optional branded station wrap'
+            ],
+            specs: [
+                { label: 'Output', value: 'Up to 120 servings/hour' },
+                { label: 'Colours', value: 'Pink, blue, mixed (custom on request)' },
+                { label: 'Operator', value: 'Included' },
+                { label: 'Suitable For', value: 'Roadshows, carnivals, family events' },
+            ]
+        },
+        {
+            id: 'popcorn',
+            name: 'Popcorn Machine',
+            category: 'entertainment',
+            categoryLabel: 'Entertainment',
+            imageClass: 'product-card__image--entertainment',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>',
+            tagline: 'Classic freshly-popped popcorn served hot — a crowd favourite at any event or roadshow.',
+            desc: 'Our popcorn machine station serves fresh, hot popcorn throughout your event — a universally loved snack that keeps guests happy during networking sessions, roadshows, trade shows, and exhibitions. Available in classic butter, cheese, or caramel flavours. The retro-style machine doubles as a charming décor element.',
+            includes: [
+                '1 commercial popcorn machine',
+                'Popcorn kernels and oil supply for event duration',
+                '1 operator',
+                'Serving bags or buckets',
+                'Optional branded station wrap'
+            ],
+            specs: [
+                { label: 'Output', value: 'Up to 150 servings/hour' },
+                { label: 'Flavours', value: 'Butter, cheese, caramel' },
+                { label: 'Operator', value: 'Included' },
+                { label: 'Suitable For', value: 'All event types' },
+            ]
+        },
+        {
+            id: 'cocktail-table',
+            name: 'Cocktail Table (High Table)',
+            category: 'furniture',
+            categoryLabel: 'Furniture',
+            imageClass: 'product-card__image--furniture',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="2" rx="1"/><rect x="6" y="13" width="12" height="6" rx="1"/><line x1="9" y1="19" x2="9" y2="22"/><line x1="15" y1="19" x2="15" y2="22"/><rect x="5" y="5" width="14" height="6" rx="1"/></svg>',
+            tagline: 'Standing cocktail tables for networking sessions, registration areas, and VIP receptions.',
+            desc: 'Our high cocktail tables are a staple of professional events — perfect for cocktail receptions, networking evenings, registration areas, and buffet stations. Available with optional linen covers in white, black, or custom colours. Suitable for both indoor and outdoor use. Delivered and collected by our logistics team.',
+            includes: [
+                'Cocktail high table unit(s)',
+                'Optional table linen cover (white or black)',
+                'Delivery to event venue',
+                'Collection after event'
+            ],
+            specs: [
+                { label: 'Table Height', value: 'Approx. 105–110cm' },
+                { label: 'Table Top', value: 'Round 60cm diameter' },
+                { label: 'Cover', value: 'Optional — white, black, or custom' },
+                { label: 'Min. Qty', value: '2 units' },
+            ]
+        },
+        {
+            id: 'tiffany-chair',
+            name: 'Tiffany Chair',
+            category: 'furniture',
+            categoryLabel: 'Furniture',
+            imageClass: 'product-card__image--furniture',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>',
+            tagline: 'Elegant clear acrylic Tiffany chairs — adding modern sophistication to weddings, galas, and upscale events.',
+            desc: 'Tiffany chairs (also known as ghost chairs) are the iconic clear acrylic seating choice for premium events. Their transparent design gives any event venue a light, airy, and luxurious feel without visually cluttering the space. Available in large quantities for gala dinners, weddings, award ceremonies, and corporate banquets.',
+            includes: [
+                'Tiffany/ghost chair units (quantity as required)',
+                'Delivery to event venue',
+                'Setup arrangement at venue',
+                'Collection and removal after event'
+            ],
+            specs: [
+                { label: 'Material', value: 'Clear polycarbonate acrylic' },
+                { label: 'Style', value: 'Ghost / Tiffany' },
+                { label: 'Weight Capacity', value: 'Up to 120kg per chair' },
+                { label: 'Min. Qty', value: '10 units' },
+            ]
+        },
+        {
+            id: 'lounge-sofa',
+            name: 'Lounge Sofa Set',
+            category: 'furniture',
+            categoryLabel: 'Furniture',
+            imageClass: 'product-card__image--furniture',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>',
+            tagline: 'Premium lounge seating sets for VIP areas, networking zones, and upscale event environments.',
+            desc: 'Our lounge sofa sets create inviting, premium seating areas within your event — perfect for VIP lounges, networking corners, exhibition booth interiors, and breakout zones. Each set is styled to complement a sophisticated event aesthetic. Available in white, black, or neutral tones.',
+            includes: [
+                '2 × 2-seater sofa units',
+                '1 × coffee table',
+                '1 × side table',
+                'Delivery and arrangement at venue',
+                'Collection after event'
+            ],
+            specs: [
+                { label: 'Sofa Style', value: 'Modern / Contemporary' },
+                { label: 'Colours', value: 'White, black, grey (on availability)' },
+                { label: 'Seating', value: '4 persons per set' },
+                { label: 'Suitable For', value: 'Indoor use' },
+            ]
+        },
+        {
+            id: 'barricade',
+            name: 'Steel Barricade',
+            category: 'furniture',
+            categoryLabel: 'Furniture',
+            imageClass: 'product-card__image--furniture',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+            tagline: 'Heavy-duty interlocking steel crowd control barriers for managing large gatherings and outdoor events.',
+            desc: 'Our galvanised steel barricades are the industry standard for crowd management at concerts, roadshows, marathons, and public events. The interlocking design allows for fast deployment in straight lines, curves, or enclosures. Available in large quantities. Delivered flat-packed and assembled on-site by our team.',
+            includes: [
+                'Steel crowd control barrier panels (qty as required)',
+                'Interlocking feet and connectors',
+                'Delivery to event site',
+                'Assembly and positioning by our team',
+                'Collection and removal after event'
+            ],
+            specs: [
+                { label: 'Panel Size', value: '2.2m × 1.1m' },
+                { label: 'Material', value: 'Galvanised steel' },
+                { label: 'Interlocking', value: 'Yes — chain or pin' },
+                { label: 'Min. Qty', value: '10 panels' },
+                { label: 'Suitable For', value: 'Indoor & outdoor' },
+            ]
+        },
+        {
+            id: 'welcome-arch',
+            name: 'Custom Welcome Arch (Wood)',
+            category: 'decor',
+            categoryLabel: 'Decoration',
+            imageClass: 'product-card__image--decor',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+            tagline: 'Elegant natural wood entrance arch — customisable with flowers, fabric, greenery, and branding.',
+            desc: 'Our natural wood welcome arch is a stunning focal point for event entrances, stage backdrops, and photo spots. The warm, organic aesthetic of natural timber pairs beautifully with floral arrangements, fabric draping, greenery, and soft lighting. Fully customisable to match your event theme, colour palette, and branding. Installed and dismantled by our décor team.',
+            includes: [
+                'Custom wooden arch frame structure',
+                'Customisable with flowers, fabric, or greenery (add-on)',
+                'Installation at event venue',
+                'Positioning and styling on-site',
+                'Dismantling and removal after event'
+            ],
+            specs: [
+                { label: 'Material', value: 'Natural timber / engineered wood' },
+                { label: 'Standard Size', value: '2.4M wide × 2.8M tall' },
+                { label: 'Custom Sizes', value: 'Available on request' },
+                { label: 'Décor Add-ons', value: 'Flowers, fabric, greenery (extra cost)' },
+            ]
+        },
+        {
+            id: 'balloon',
+            name: 'Balloon Decoration',
+            category: 'decor',
+            categoryLabel: 'Decoration',
+            imageClass: 'product-card__image--decor',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M12 2v4M12 10v12M8 14l4 4 4-4"/></svg>',
+            tagline: 'Custom balloon arrangements — arches, columns, and bouquets adding colour and vibrancy to any event.',
+            desc: 'Our balloon décor team creates stunning custom balloon installations that transform any event space with colour, energy, and personality. From elegant pastel arches for weddings to bold branded columns for roadshows, we craft arrangements that perfectly match your theme and brand palette. All balloon décor is installed on the day and cleared after your event.',
+            includes: [
+                'Balloon arch or column structure(s)',
+                'Custom colour selection to match brand/theme',
+                'On-site installation and styling',
+                'Setup on event day',
+                'Removal after event'
+            ],
+            specs: [
+                { label: 'Types', value: 'Arch, column, bouquet, backdrop' },
+                { label: 'Colours', value: 'Fully custom to your palette' },
+                { label: 'Balloon Type', value: 'Latex and foil available' },
+                { label: 'Lead Time', value: '3 days minimum' },
+            ]
+        },
+        {
+            id: 'neon-sign',
+            name: 'Neon Sign',
+            category: 'decor',
+            categoryLabel: 'Decoration',
+            imageClass: 'product-card__image--decor',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>',
+            tagline: 'Custom LED neon signs for photo backdrops, branding, and ambience — any text or logo design.',
+            desc: 'Our custom LED neon signs are one of the most shareable, Instagram-worthy elements you can add to an event. Whether it\'s a brand slogan, a hashtag, a wedding phrase, or a logo, our signs are manufactured to your exact design in vibrant LED neon flex and mounted on an acrylic backing board. Plug-and-play with a standard power adapter.',
+            includes: [
+                'Custom LED neon sign (your design)',
+                'Acrylic backing board with wall/stand mounting',
+                'Power adapter and cable',
+                'Setup and positioning at venue',
+                'Collection after event (or purchase option)'
+            ],
+            specs: [
+                { label: 'Technology', value: 'LED neon flex (not glass)' },
+                { label: 'Colours', value: 'Wide colour range available' },
+                { label: 'Backing', value: 'Clear or frosted acrylic' },
+                { label: 'Power', value: 'Standard 240V plug' },
+                { label: 'Lead Time', value: '5–7 working days' },
+            ]
+        }
+    ];
+
+    // ============================================================
+    // RENDER
+    // ============================================================
+    function getParam(key) {
+        return new URLSearchParams(window.location.search).get(key);
+    }
+
+    const IMAGE_MAP = {
+        'led-indoor':      'product-card__image--av',
+        'led-arch':        'product-card__image--av-arch',
+        'sound-system':    'product-card__image--sound',
+        'truss':           'product-card__image--truss',
+        'lighting-full':   'product-card__image--lighting',
+        'lighting-mood':   'product-card__image--lighting-mood',
+        'lighting-basic':  'product-card__image--lighting-basic',
+        'backdrop':        'product-card__image--backdrop',
+        'rostrum':         'product-card__image--rostrum',
+        'cold-spark':      'product-card__image--cold-spark',
+        'launching':       'product-card__image--launching',
+        'booth-3d':        'product-card__image--booth-3d',
+        'booth-custom':    'product-card__image--booth-custom',
+        'drone':           'product-card__image--drone',
+        'videography':     'product-card__image--video',
+        'photography':     'product-card__image--photo',
+        'cotton-candy':    'product-card__image--cotton-candy',
+        'popcorn':         'product-card__image--popcorn',
+        'cocktail-table':  'product-card__image--cocktail-table',
+        'tiffany-chair':   'product-card__image--tiffany',
+        'lounge-sofa':     'product-card__image--sofa',
+        'barricade':       'product-card__image--barricade',
+        'welcome-arch':    'product-card__image--arch',
+        'balloon':         'product-card__image--balloon',
+        'neon-sign':       'product-card__image--neon',
+    };
+    function getImageClass(p) { return IMAGE_MAP[p.id] || p.imageClass; }
+
+    function renderCard(p) {
+        return `
+        <div class="product-item" data-category="${p.category}" style="cursor:pointer;" onclick="location.href='product.html?id=${p.id}'">
+            <div class="product-card">
+                <div class="product-card__image ${getImageClass(p)}"></div>
+                <div class="product-card__body">
+                    <span class="product-card__cat">${p.categoryLabel}</span>
+                    <h3 class="product-card__title">${p.name}</h3>
+                    <p class="product-card__desc">${p.tagline}</p>
+                    <a href="product.html?id=${p.id}" class="product-card__btn">Ask for Quote</a>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    function renderDetail(p) {
+        const includesHtml = p.includes.map(i => `
+            <li><span class="check">&#10003;</span>${i}</li>`).join('');
+
+        const specsHtml = p.specs.map(s => `
+            <tr><td>${s.label}</td><td>${s.value}</td></tr>`).join('');
+
+        const waMsg = encodeURIComponent(`Hi, I'm interested in ${p.name}. Can you provide more details and a quote?`);
+
+        return `
+        <!-- LEFT: Visual -->
+        <div class="pd__visual">
+            <div class="pd__image ${getImageClass(p)}">
+                <span class="pd__image-label">${p.categoryLabel}</span>
+            </div>
+            <div class="pd__enquiry-box">
+                <p>Interested in this product? Get in touch for availability and pricing.</p>
+                <div class="pd__enquiry-btns">
+                    <a href="contact.html?product=${encodeURIComponent(p.name)}" class="pd__btn-quote">Get a Quote</a>
+                    <a href="https://wa.me/60189023676?text=${waMsg}" target="_blank" rel="noopener" class="pd__btn-wa">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Content -->
+        <div class="pd__content">
+            <a href="products.html" class="pd__back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg>
+                Back to Products
+            </a>
+            <span class="pd__category">${p.categoryLabel}</span>
+            <h1 class="pd__title">${p.name}</h1>
+            <p class="pd__tagline">${p.tagline}</p>
+
+            <div class="pd__section">
+                <h2 class="pd__section-title">Overview</h2>
+                <p class="pd__desc">${p.desc}</p>
+            </div>
+
+            <div class="pd__section">
+                <h2 class="pd__section-title">What's Included</h2>
+                <ul class="pd__includes">${includesHtml}</ul>
+            </div>
+
+            <div class="pd__section">
+                <h2 class="pd__section-title">Specifications</h2>
+                <table class="pd__specs">${specsHtml}</table>
+            </div>
+        </div>`;
+    }
+
+    // Init
+    const id = getParam('id');
+    const product = PRODUCTS.find(p => p.id === id);
+    const layout = document.getElementById('pdLayout');
+    const relatedSection = document.getElementById('pdRelated');
+    const relatedGrid = document.getElementById('pdRelatedGrid');
+
+    if (product) {
+        document.title = product.name + ' | Pro Event & Exhibition';
+        layout.innerHTML = renderDetail(product);
+
+        // Related: same category, exclude current
+        const related = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id)
+            .concat(PRODUCTS.filter(p => p.category !== product.category))
+            .slice(0, 5);
+
+        if (related.length) {
+            relatedGrid.innerHTML = related.map(renderCard).join('');
+            relatedSection.style.display = '';
+        }
+    } else {
+        document.getElementById('pdNotFound').style.display = '';
+    }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
