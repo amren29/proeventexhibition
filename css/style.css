@@ -825,46 +825,46 @@ button { font-family: inherit; }
     background-position: center 45%;
 }
 
-/* 1 — Exhibition booth / trade show */
+/* 1 — Kosme exhibition booth */
 .portfolio-img--1 {
     background-image:
         linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&h=600&fit=crop&q=85&auto=format');
+        url('../portfolio/20221018_203805-scaled.jpg');
 }
 
-/* 2 — Corporate gala / annual dinner */
+/* 2 — Indonesia Ministry of Trade pavilion */
 .portfolio-img--2 {
     background-image:
         linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&h=600&fit=crop&q=85&auto=format');
+        url('../portfolio/IHS24_9188a.webp');
 }
 
-/* 3 — Conference */
+/* 3 — Korea / JMP Corporation */
 .portfolio-img--3 {
     background-image:
         linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900&h=600&fit=crop&q=85&auto=format');
+        url('../portfolio/Posidonia-2026-Expo.webp');
 }
 
-/* 4 — Large trade exhibition (wide card) */
+/* 4 — Taiwan exhibition hall (wide card) */
 .portfolio-img--4 {
     background-image:
         linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1400&h=600&fit=crop&q=85&auto=format');
+        url('../portfolio/TAIWAN-A-HD.jpg');
 }
 
-/* 5 — Product launch / stage event */
+/* 5 — Sorath Ortho double-decker booth */
 .portfolio-img--5 {
     background-image:
         linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900&h=600&fit=crop&q=85&auto=format');
+        url('../portfolio/Stand-Builder.webp');
 }
 
-/* 6 — Brand activation / roadshow */
+/* 6 — TSERAM heavy equipment expo */
 .portfolio-img--6 {
     background-image:
         linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=900&h=600&fit=crop&q=85&auto=format');
+        url('../portfolio/Rema-Expo.webp');
 }
 
 /* Always-visible bottom vignette so photos blend into dark bg */
