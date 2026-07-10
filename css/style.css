@@ -1376,7 +1376,7 @@ button { font-family: inherit; }
 }
 .clients__grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
 }
 
@@ -1423,7 +1423,7 @@ button { font-family: inherit; }
 }
 .client-logo:hover span { color: rgba(0,0,0,.7); }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .clients__grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 480px) {
