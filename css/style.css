@@ -797,101 +797,58 @@ button { font-family: inherit; }
 }
 .portfolio-item__image:hover { transform: scale(1.03); }
 
-/* ---- Portfolio photos (Unsplash) ----
-   Replace these URLs with your own event photography when ready.
-   Each image has a dark gradient overlay baked in for text legibility.
-   Overlay on hover is handled separately by .portfolio-item__overlay.
-   ---------------------------------------------------------------- */
-
 /* Shared photo settings */
 .portfolio-img--1,
 .portfolio-img--2,
 .portfolio-img--3,
 .portfolio-img--4,
 .portfolio-img--5,
-.portfolio-img--6 {
-    background-color: #120408; /* fallback if image fails to load */
+.portfolio-img--6,
+.portfolio-img--7,
+.portfolio-img--8,
+.portfolio-img--9,
+.portfolio-img--10,
+.portfolio-img--11,
+.portfolio-img--12,
+.portfolio-img--13,
+.portfolio-img--14 {
+    background-color: #120408;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background-position .6s ease;
+    transition: background-position .6s ease, transform .6s var(--ease-out);
 }
 .portfolio-img--1:hover,
 .portfolio-img--2:hover,
 .portfolio-img--3:hover,
 .portfolio-img--4:hover,
 .portfolio-img--5:hover,
-.portfolio-img--6:hover {
+.portfolio-img--6:hover,
+.portfolio-img--7:hover,
+.portfolio-img--8:hover,
+.portfolio-img--9:hover,
+.portfolio-img--10:hover,
+.portfolio-img--11:hover,
+.portfolio-img--12:hover,
+.portfolio-img--13:hover,
+.portfolio-img--14:hover {
     background-position: center 45%;
 }
 
-/* 1 — Kosme exhibition booth */
-.portfolio-img--1 {
-    background-image:
-        linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('../portfolio/20221018_203805-scaled.jpg');
-}
-
-/* 2 — Indonesia Ministry of Trade pavilion */
-.portfolio-img--2 {
-    background-image:
-        linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('../portfolio/IHS24_9188a.webp');
-}
-
-/* 3 — Korea / JMP Corporation */
-.portfolio-img--3 {
-    background-image:
-        linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('../portfolio/Posidonia-2026-Expo.webp');
-}
-
-/* 4 — Taiwan exhibition hall (wide card) */
-.portfolio-img--4 {
-    background-image:
-        linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('../portfolio/TAIWAN-A-HD.jpg');
-}
-
-/* 5 — Sorath Ortho double-decker booth */
-.portfolio-img--5 {
-    background-image:
-        linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('../portfolio/Stand-Builder.webp');
-}
-
-/* 6 — TSERAM heavy equipment expo */
-.portfolio-img--6 {
-    background-image:
-        linear-gradient(to bottom, rgba(9,9,9,.1) 0%, rgba(9,9,9,.55) 100%),
-        url('../portfolio/Rema-Expo.webp');
-}
-
-/* Always-visible bottom vignette so photos blend into dark bg */
-.portfolio-item__image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(9,9,9,.7) 0%, rgba(9,9,9,.2) 40%, transparent 70%);
-    z-index: 1;
-    pointer-events: none;
-    transition: opacity .35s;
-}
-.portfolio-item__image:hover::after { opacity: 0; }
-
-.portfolio-item__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(9,9,9,.97) 0%, rgba(9,9,9,.6) 50%, rgba(9,9,9,.15) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 28px;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity .35s;
-}
-.portfolio-item__image:hover .portfolio-item__overlay { opacity: 1; }
+.portfolio-img--1  { background-image: url('../portfolio/20221018_203805-scaled.jpg'); }
+.portfolio-img--2  { background-image: url('../portfolio/IHS24_9188a.webp'); }
+.portfolio-img--3  { background-image: url('../portfolio/Posidonia-2026-Expo.webp'); }
+.portfolio-img--4  { background-image: url('../portfolio/TAIWAN-A-HD.jpg'); }
+.portfolio-img--5  { background-image: url('../portfolio/Stand-Builder.webp'); }
+.portfolio-img--6  { background-image: url('../portfolio/Rema-Expo.webp'); }
+.portfolio-img--7  { background-image: url('../portfolio/Posidonia-2026-Stand-Builder.webp'); }
+.portfolio-img--8  { background-image: url('../portfolio/2026-04-15.jpg'); }
+.portfolio-img--9  { background-image: url('../portfolio/2026-04-15 (1).jpg'); }
+.portfolio-img--10 { background-image: url('../portfolio/2026-04-15 (2).jpg'); }
+.portfolio-img--11 { background-image: url('../portfolio/705374238_122112481010812791_8577598874204575930_n.jpg'); }
+.portfolio-img--12 { background-image: url('../portfolio/718618571_122114456816812791_3115927846652752532_n.jpg'); }
+.portfolio-img--13 { background-image: url('../portfolio/719548581_122114455934812791_3410352190014543015_n.jpg'); }
+.portfolio-img--14 { background-image: url('../portfolio/720449650_122114455682812791_7433107428280692018_n.jpg'); }
 
 .portfolio-item__cat {
     font-size: 10px;
