@@ -1409,39 +1409,43 @@ button { font-family: inherit; }
     gap: 20px;
 }
 
+/* Google rating strip */
+.g-rating-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+.g-rating-strip__logo { width: 28px; height: 28px; flex-shrink: 0; }
+.g-rating-strip__score {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+}
+.g-rating-strip__stars { font-size: 20px; color: #FBBC05; letter-spacing: 2px; line-height: 1; }
+.g-star.filled { color: #FBBC05; }
+.g-rating-strip__label { font-size: 13px; color: var(--grey); }
+
+/* Google review card */
 .testi-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 38px 34px;
+    padding: 28px 26px;
     transition: border-color .25s, transform .25s, box-shadow .25s;
 }
 .testi-card:hover {
     border-color: var(--border-red);
     transform: translateY(-4px);
-    box-shadow: 0 10px 32px rgba(0,0,0,.1);
+    box-shadow: 0 10px 32px rgba(0,0,0,.08);
 }
-.testi-card__quote {
-    font-family: var(--font-head);
-    font-size: 72px;
-    font-weight: 900;
-    color: var(--red);
-    opacity: .25;
-    line-height: .7;
-    margin-bottom: 14px;
-    display: block;
-}
-.testi-card__text {
-    font-size: 14px;
-    color: var(--grey);
-    line-height: 1.8;
-    margin-bottom: 28px;
-    font-style: italic;
-}
-.testi-card__author {
+.testi-card__top {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 .testi-card__avatar {
     width: 42px; height: 42px;
@@ -1453,21 +1457,51 @@ button { font-family: inherit; }
     font-family: var(--font-head);
     font-size: 13px;
     font-weight: 700;
-    color: var(--white);
+    color: #fff;
     flex-shrink: 0;
 }
-.testi-card__author strong {
+.testi-card__meta { flex: 1; }
+.testi-card__meta strong {
     display: block;
     font-size: 14px;
     font-weight: 600;
     color: var(--white);
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
-.testi-card__author span {
-    font-size: 12px;
+.testi-card__stars {
+    font-size: 14px;
+    color: #FBBC05;
+    letter-spacing: 1px;
+}
+.testi-card__g { width: 20px; height: 20px; flex-shrink: 0; margin-left: auto; }
+.testi-card__text {
+    font-size: 14px;
     color: var(--grey);
-    line-height: 1.4;
-    display: block;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* View on Google CTA */
+.testimonials__cta {
+    text-align: center;
+    margin-top: 40px;
+}
+.g-review-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 28px;
+    border: 2px solid var(--border);
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    transition: border-color .2s, background .2s;
+}
+.g-review-btn:hover {
+    border-color: #4285F4;
+    background: rgba(66,133,244,.06);
 }
 
 /* ============================================================
@@ -2069,23 +2103,13 @@ button { font-family: inherit; }
     background: var(--black);
 }
 .faq__container {
-    max-width: var(--wrap);
+    max-width: 780px;
     margin: 0 auto;
     padding: 0 var(--gutter);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
 }
-.faq__image {
-    border-radius: 20px;
-    min-height: 560px;
-    position: sticky;
-    top: 100px;
-    align-self: start;
-    background:
-        linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.45) 100%),
-        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=900&fit=crop&q=85&auto=format') center/cover no-repeat;
+.faq__header {
+    text-align: center;
+    margin-bottom: 52px;
 }
 .faq__content {
     display: flex;
@@ -2099,20 +2123,18 @@ button { font-family: inherit; }
     letter-spacing: -.02em;
     color: var(--white);
     margin: 12px 0 10px;
+    text-align: center;
 }
 .faq__subtitle {
     font-size: 15px;
     color: var(--grey);
     margin-bottom: 40px;
+    text-align: center;
 }
 .faq__list {
     display: flex;
     flex-direction: column;
     gap: 0;
-}
-@media (max-width: 900px) {
-    .faq__container { grid-template-columns: 1fr; gap: 48px; }
-    .faq__image { min-height: 300px; }
 }
 .faq__item {
     border-bottom: 1px solid var(--border);
@@ -2659,6 +2681,7 @@ button { font-family: inherit; }
     text-align: center;
     margin-bottom: 52px;
 }
+.certs__header .section-subtitle { margin: 0 auto; }
 .certs__grid {
     display: flex;
     justify-content: center;
