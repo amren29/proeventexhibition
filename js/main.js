@@ -199,24 +199,22 @@ if (contactForm) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending…';
 
-        // -------------------------------------------------------
-        // Wire up to your backend / form service here.
-        // Examples: Formspree, Netlify Forms, EmailJS, custom API.
-        //
-        // Formspree example:
-        //   const res = await fetch('https://formspree.io/f/YOUR_ID', {
-        //       method: 'POST',
-        //       body: new FormData(contactForm),
-        //       headers: { Accept: 'application/json' }
-        //   });
-        //   if (res.ok) { ... success ... } else { ... error ... }
-        //
-        // Until connected, the form shows success after a short delay.
-        // -------------------------------------------------------
-        await new Promise(r => setTimeout(r, 900)); // remove when real API added
-
-        // Simulate success (replace with real response check)
-        const success = true;
+        // Formspree — sends to event@proeventexhibition.my
+        // Replace FORMSPREE_ID with your actual Formspree form ID after signing up at formspree.io
+        let success = false;
+        try {
+            const data = new FormData(contactForm);
+            data.append('_replyto', data.get('email'));
+            data.append('_subject', `New Enquiry: ${data.get('service') || 'General'} — Pro Event & Exhibition`);
+            const res = await fetch('https://formspree.io/f/FORMSPREE_ID', {
+                method: 'POST',
+                body: data,
+                headers: { Accept: 'application/json' }
+            });
+            success = res.ok;
+        } catch (err) {
+            success = false;
+        }
 
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
