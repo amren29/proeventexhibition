@@ -234,7 +234,7 @@ button { font-family: inherit; }
     text-decoration: none;
 }
 .nav__logo-img {
-    height: 36px;
+    height: 24px;
     width: auto;
     display: block;
     object-fit: contain;
