@@ -200,13 +200,12 @@ if (contactForm) {
         submitBtn.innerHTML = 'Sending…';
 
         // Formspree — sends to event@proeventexhibition.my
-        // Replace FORMSPREE_ID with your actual Formspree form ID after signing up at formspree.io
         let success = false;
         try {
             const data = new FormData(contactForm);
             data.append('_replyto', data.get('email'));
             data.append('_subject', `New Enquiry: ${data.get('service') || 'General'} — Pro Event & Exhibition`);
-            const res = await fetch('https://formspree.io/f/FORMSPREE_ID', {
+            const res = await fetch('https://formspree.io/f/xnjealnq', {
                 method: 'POST',
                 body: data,
                 headers: { Accept: 'application/json' }
