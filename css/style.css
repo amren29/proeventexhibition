@@ -2814,3 +2814,6 @@ button { font-family: inherit; }
 @media (max-width: 480px) {
     .wa-float { bottom: 76px; right: 20px; width: 42px; height: 42px; }
 }
+
+/* Hide inactive social links (no URL yet) */
+.footer__social-link--inactive { display: none; }
