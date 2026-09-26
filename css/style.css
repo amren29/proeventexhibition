@@ -239,6 +239,14 @@ button { font-family: inherit; }
     display: block;
     object-fit: contain;
 }
+.nav__logo-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    margin-left: 10px;
+}
 
 /* Desktop links */
 .nav__links {
