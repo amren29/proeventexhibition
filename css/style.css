@@ -245,7 +245,6 @@ button { font-family: inherit; }
     color: var(--white);
     letter-spacing: 0.02em;
     white-space: nowrap;
-    margin-left: 10px;
 }
 
 /* Desktop links */
